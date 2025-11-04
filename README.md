@@ -2,7 +2,8 @@
 
 Este proyecto es una práctica creada con React y Vite. Contiene un pequeño UI
 con componentes (Banner, Header, Body, Footer) y está preparado para publicarse
-en GitHub Pages.
+en GitHub Pages. http://localhost:5176/practica3-react/
+https://pitonc.github.io/practica3-react/
 
 Contenido básico
 - `index.html`: punto de entrada HTML donde se monta la app React. No contiene
