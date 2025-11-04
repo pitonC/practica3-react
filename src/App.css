@@ -1,0 +1,235 @@
+:root{
+  /* Palette adjusted to match the supplied screenshots (blue/teal theme) */
+  --page-bg-1: #0b3241; /* dark navy */
+  --page-bg-2: #143d4f; /* slightly lighter */
+  --panel: #234a5b; /* panel/card background */
+  --panel-2: #2f5e71; /* inner sections */
+  --muted: #9fd0df; /* light cyan */
+  --text: #e6f7fb; /* near-white cyan */
+  --accent: #8bbf2a; /* green accent (buttons) */
+  --banner-color: #6ed3f2; /* bright cyan for headings */
+}
+
+.html, body, #root, html,body,#root{
+  height:100%;
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  /* smoother, less-contrasty background to blend with the panel */
+  background: linear-gradient(180deg, #0f3946 0%, #163c4d 60%);
+  color:var(--text);
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:2.25rem 1rem;
+}
+
+.hero-root{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:4rem 1rem;
+}
+
+.hero{
+  text-align:center;
+  max-width:920px;
+}
+
+.hero-logo{
+  width:360px;
+  max-width:70vw;
+  height:auto;
+  margin:0 auto 1.5rem auto;
+  display:block;
+  filter:drop-shadow(0 12px 28px rgba(0,0,0,0.6));
+}
+
+.hero-title{
+  margin:0;
+  font-size:3.5rem;
+  letter-spacing:6px;
+  color:var(--text);
+  text-shadow: 0 2px 0 rgba(0,0,0,0.6);
+}
+
+.hero-sub{
+  margin:0.5rem 0 0 0;
+  color:var(--muted);
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+/* Styles for the new components */
+.page-root{
+  width:100%;
+  max-width:980px;
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:1rem;
+  /* make the panel blend better with the page background: less contrast */
+  background: linear-gradient(180deg, rgba(35,74,91,0.92) 0%, rgba(47,94,113,0.92) 100%);
+  border-radius:10px;
+  padding:1.25rem 1.25rem 1.75rem 1.25rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.22); /* softer shadow */
+  border: 1px solid rgba(255,255,255,0.02); /* subtler border */
+}
+
+.component.banner{
+  text-align:left;
+  margin:0.5rem 0;
+  padding:0.5rem 0.5rem;
+}
+.banner-text{
+  font-size:1.1rem;
+  letter-spacing:1.5px;
+  margin:0.25rem 0;
+  color:var(--muted);
+  font-weight:700;
+}
+
+.banner-text.large{
+  font-size:2rem;
+  color:var(--banner-color);
+  letter-spacing:5px;
+  margin-bottom:0.5rem;
+}
+
+.banner-text.small{
+  font-size:1.05rem;
+  color:var(--banner-color);
+  opacity:0.95;
+}
+
+/* Make banner text visually distinct from the panel by adding colored pills
+   and a left accent so each banner stands out from its background */
+.component.banner{
+  display:flex;
+  align-items:center;
+  gap:0.75rem;
+  justify-content:center; /* center items by default */
+}
+
+/* vertical for large banners (text above logo), horizontal for small */
+.component.banner.vertical{
+  flex-direction:column;
+}
+.component.banner.horizontal{
+  flex-direction:row;
+}
+
+/* plain variant: no pill, no left border, same appearance as items */
+.component.banner.plain {
+  background: transparent;
+  padding: 0.25rem 0;
+  border-left: none;
+}
+.component.banner.plain .banner-text.small {
+  background: transparent;
+  padding: 0;
+  border-left: none;
+  color: var(--text);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.banner-text.large{
+  background: rgba(110,211,242,0.06); /* subtle cyan backdrop */
+  padding:0.6rem 0.9rem;
+  border-radius:8px;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.06);
+  border-left:6px solid var(--banner-color);
+}
+
+.banner-text.small{
+  background: rgba(155,191,42,0.06); /* subtle greenish backdrop */
+  padding:0.45rem 0.75rem;
+  border-radius:6px;
+  border-left:6px solid var(--accent);
+}
+
+.header-component .header-logo.small{
+  width:96px; /* logo cuadrado estándar más pequeño */
+  height:96px;
+  object-fit:cover;
+  display:block;
+  margin:0.5rem 0.25rem;
+  border-radius:6px; /* ligeramente redondeado */
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* ensure centered images get centered inside their container */
+.header-component .header-logo.centered{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.body-component{
+  margin-top:1.25rem;
+  text-align:left;
+  width:100%;
+  max-width:720px;
+}
+.items-list{
+  list-style:none;
+  padding:0.5rem 0 1rem 0;
+  margin:0 0 1rem 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center; /* center the list items horizontally */
+}
+.item-row{
+  padding:0.35rem 0;
+  color:var(--text);
+  width:100%;
+  max-width:420px;
+  text-align:center; /* center text inside each item */
+}
+.primary-btn{
+  background: linear-gradient(180deg, #9ec936, var(--accent));
+  color:#042016;
+  border:none;
+  padding:0.6rem 1rem;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  display:block;
+  margin:0.75rem auto 0 auto; /* center the button */
+}
+
+.footer-component{
+  margin-top:2rem;
+  text-align:center;
+  color:var(--muted);
+}
+.footer-link a{
+  color:var(--muted);
+  text-decoration:underline;
+  background: rgba(255,255,255,0.02);
+  padding:0.25rem 0.5rem;
+  border-radius:4px;
+}
+
+/* Footer pill and link button styling to make it identifiable */
+.footer-children .footer-pill{
+  display:inline-block;
+  background: rgba(110,211,242,0.07);
+  color:var(--banner-color);
+  padding:0.35rem 0.6rem;
+  border-radius:8px;
+  margin-right:0.75rem;
+  font-weight:700;
+}
+
+.footer-link-button{
+  display:inline-block;
+  background: linear-gradient(180deg, #9ec936, var(--accent));
+  color:#04180f;
+  padding:0.4rem 0.75rem;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:700;
+}
