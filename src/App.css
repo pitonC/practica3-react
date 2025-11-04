@@ -10,11 +10,11 @@
   --banner-color: #6ed3f2; /* bright cyan for headings */
 }
 
-.html, body, #root, html,body,#root{
+/* base page layout */
+html, body, #root{
   height:100%;
   margin:0;
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  /* smoother, less-contrasty background to blend with the panel */
   background: linear-gradient(180deg, #0f3946 0%, #163c4d 60%);
   color:var(--text);
   display:flex;
@@ -23,42 +23,8 @@
   padding:2.25rem 1rem;
 }
 
-.hero-root{
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:4rem 1rem;
-}
-
-.hero{
-  text-align:center;
-  max-width:920px;
-}
-
-.hero-logo{
-  width:360px;
-  max-width:70vw;
-  height:auto;
-  margin:0 auto 1.5rem auto;
-  display:block;
-  filter:drop-shadow(0 12px 28px rgba(0,0,0,0.6));
-}
-
-.hero-title{
-  margin:0;
-  font-size:3.5rem;
-  letter-spacing:6px;
-  color:var(--text);
-  text-shadow: 0 2px 0 rgba(0,0,0,0.6);
-}
-
-.hero-sub{
-  margin:0.5rem 0 0 0;
-  color:var(--muted);
-  font-weight:700;
-  letter-spacing:2px;
-}
+/* Note: hero-* classes were removed because the app now uses Banner/Header/Body/Footer
+   keeping only the component styles below to avoid duplicated/unused rules. */
 
 /* Styles for the new components */
 .page-root{
@@ -233,3 +199,16 @@
   text-decoration:none;
   font-weight:700;
 }
+
+/* clickable pill in footer linking to repo */
+.footer-pill-link{
+  display:inline-block;
+  background: rgba(110,211,242,0.07);
+  color:var(--banner-color);
+  padding:0.35rem 0.6rem;
+  border-radius:8px;
+  margin-right:0.75rem;
+  font-weight:700;
+  text-decoration:none;
+}
+.footer-pill-link:hover{opacity:0.95}
