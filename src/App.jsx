@@ -35,7 +35,7 @@ function App() {
 
       {/* Footer: recibe children y etiquetahtml prop con el link a GitHub Pages */}
       <Footer etiquetahtml={{ href: 'https://pitonC.github.io/practica3-react', text: 'Visitar GitHub Pages' }}>
-        <div className="footer-pill">Proyecto: <strong>practica3-react</strong></div>
+        <a className="footer-pill-link" href="https://github.com/pitonC/practica3-react" target="_blank" rel="noreferrer">Proyecto: <strong>practica3-react</strong></a>
       </Footer>
     </div>
   )
