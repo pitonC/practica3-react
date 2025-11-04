@@ -1,6 +1,12 @@
 import React from 'react'
 
-// Footer: acepta children y una prop `etiquetahtml` con { href, text }
+/**
+ * Footer
+ * @param {{ children?: React.ReactNode, etiquetahtml?: { href: string, text: string } }} props
+ *
+ * Pie de página simple que renderiza contenido hijo y, opcionalmente,
+ * un enlace con estilo (prop `etiquetahtml`).
+ */
 export default function Footer({ children, etiquetahtml }) {
   return (
     <footer className="component footer-component">

@@ -4,9 +4,19 @@ import Header from './components/Header'
 import Body from './components/Body'
 import Footer from './components/Footer'
 
-// Componente reducido: muestra únicamente el diseño de la Imagen 1
-// (logo grande centrado, título y subtítulo). La imagen debe colocarse en
-// `public/pasted-image-2.png` para que se sirva como `/pasted-image-2.png`.
+/**
+ * App
+ *
+ * Componente raíz de la aplicación. Presenta una estructura muy sencilla:
+ * - Banner grande con logo (Header)
+ * - Banner pequeño con texto
+ * - Banner plain adicional
+ * - Body con lista y botón de alerta
+ * - Footer con enlaces
+ *
+ * Nota: las imágenes estáticas deben colocarse en `public/` para servirlas
+ * correctamente (por ejemplo `public/logo.png`).
+ */
 function App() {
   const arreglo = [
     { id: 'id1', label: '- elemento 1' },
@@ -18,22 +28,21 @@ function App() {
 
   return (
     <div className="page-root">
-      {/* Banner antes del logo: texto "STEAM" (usando Banner.props) */}
+      {/* Banner grande: texto STEAM y logo centrado */}
       <Banner texto="STEAM" size="large">
-        {/* Header: logo (prop `logo`) - usa la imagen en public/ */}
         <Header logo="/logo.png" alt="logo-steam" />
       </Banner>
 
-      {/* Banner debajo del logo: texto "BUSCADOR PERFILES" */}
+      {/* Banner pequeño: buscador de perfiles */}
       <Banner texto="BUSCADOR PERFILES" size="small" />
 
-  {/* Banner adicional sin marco ni color distinto (igual que los ids) */}
-  <Banner texto="Información adicional" size="small" variant="plain" />
+      {/* Banner sin estilo (plain) usado para información adicional */}
+      <Banner texto="Información adicional" size="small" variant="plain" />
 
-      {/* Body: lista de 5 elementos y botón que crea una alerta */}
+      {/* Body: lista de 5 elementos y botón que muestra una alerta */}
       <Body texto={"Mostrar alerta"} arreglo={arreglo} />
 
-      {/* Footer: recibe children y etiquetahtml prop con el link a GitHub Pages */}
+      {/* Footer: muestra enlace al repo y botón hacia GitHub Pages */}
       <Footer etiquetahtml={{ href: 'https://pitonC.github.io/practica3-react', text: 'Visitar GitHub Pages' }}>
         <a className="footer-pill-link" href="https://github.com/pitonC/practica3-react" target="_blank" rel="noreferrer">Proyecto: <strong>practica3-react</strong></a>
       </Footer>

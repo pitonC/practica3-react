@@ -1,6 +1,12 @@
 import React from 'react'
 
-// Body: lista de elementos y un botón que lanza una alerta.
+/**
+ * Body
+ * @param {{ texto?: string, arreglo?: Array<{id: string, label: string}> }} props
+ *
+ * Componente que muestra una lista de items (centrada) y un botón principal.
+ * El botón por ahora lanza una alerta con el texto recibido en `texto`.
+ */
 export default function Body({ texto = 'Alerta', arreglo = [] }) {
   return (
     <div className="component body-component">
@@ -15,7 +21,7 @@ export default function Body({ texto = 'Alerta', arreglo = [] }) {
       <button
         className="primary-btn"
         onClick={() => {
-          // acción simple: alerta con el texto pasado
+          // acción simple: muestra una alerta con el texto pasado
           alert(texto)
         }}
       >

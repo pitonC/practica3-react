@@ -1,16 +1,58 @@
-# React + Vite
+# practica3-react
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una práctica creada con React y Vite. Contiene un pequeño UI
+con componentes (Banner, Header, Body, Footer) y está preparado para publicarse
+en GitHub Pages.
 
-Currently, two official plugins are available:
+Contenido básico
+- `index.html`: punto de entrada HTML donde se monta la app React. No contiene
+	lógica JS; solo referencias al bundle generado por Vite.
+- `src/`: código fuente React:
+	- `src/main.jsx`: arranca React y monta la aplicación.
+	- `src/App.jsx`: componente raíz que compone los componentes visuales.
+	- `src/components/`: componentes reutilizables (Banner, Header, Body, Footer).
+	- `src/App.css`: estilos principales del proyecto.
+- `public/`: activos estáticos que se copian tal cual al build (por ejemplo `logo.png`).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Cómo usar (rápido)
 
-## React Compiler
+1. Instalar dependencias:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```powershell
+npm install
+```
 
-## Expanding the ESLint configuration
+2. Ejecutar en desarrollo (Vite):
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```powershell
+npm run dev
+```
+
+3. Crear build de producción:
+
+```powershell
+npm run build
+```
+
+4. Desplegar a GitHub Pages (script incluido):
+
+```powershell
+npm run deploy
+# o, si prefieres forzar el repo:
+npx gh-pages -d dist -r https://github.com/pitonC/practica3-react.git
+```
+
+Notas importantes
+- Las imágenes estáticas deben estar en `public/` (por ejemplo `public/logo.png`).
+- La opción `base` en `vite.config.js` está configurada a `'/practica3-react/'`
+	para que los assets apunten correctamente cuando se publica en
+	`https://pitonC.github.io/practica3-react/`.
+- Si la página en GitHub Pages aparece en blanco, revisa las rutas en
+	`dist/index.html` y asegúrate de que los archivos JS/CSS referenciados existan.
+
+Contribuciones
+- Este repositorio es una práctica; si deseas mejorar algo, crea un fork,
+	realiza cambios y abre un pull request.
+
+Licencia
+- Código de ejemplo / educativo.
